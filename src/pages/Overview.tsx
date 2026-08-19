@@ -32,7 +32,7 @@ export const Overview: React.FC = () => {
                                 <span className="text-sm text-[#E8E0D5]/70">Live PPG Signal • MAX30102</span>
                             </div>
                             <div className="flex items-end gap-1">
-                                <span className="text-4xl lg:text-6xl font-serif leading-none tracking-tight text-white">{sensorData.heartRate}</span>
+                                <span className="text-4xl lg:text-6xl font-digital leading-none tracking-tight text-white">{sensorData.heartRate}</span>
                                 <span className="text-sm text-[#E8E0D5]/70 mb-1">bpm</span>
                             </div>
                         </div>
