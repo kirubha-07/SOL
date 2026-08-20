@@ -42,7 +42,13 @@
   }
 
   .nav-dock {
-    @apply flex items-end justify-start md:justify-center gap-1 md:gap-2 px-2 overflow-x-auto no-scrollbar touch-pan-x pointer-events-auto;
+    @apply flex items-end justify-start md:justify-center gap-1 md:gap-2 px-2 overflow-x-auto touch-pan-x pointer-events-auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .nav-dock::-webkit-scrollbar {
+    display: none;
   }
 
   .dock-item {
