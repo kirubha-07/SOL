@@ -8,6 +8,7 @@ import { Events } from './pages/Events';
 import { Settings } from './pages/Settings';
 import { DemoProvider } from './data/demoContext';
 import { VitalsProvider } from './data/VitalsProvider';
+import { SolProvider } from './data/SolProvider';
 import { Layout } from './components/Layout';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
@@ -15,6 +16,7 @@ function App() {
   return (
     <DemoProvider>
       <VitalsProvider>
+      <SolProvider>
       <BrowserRouter>
         <Layout>
           <Routes>
@@ -30,6 +32,7 @@ function App() {
           </Routes>
         </Layout>
       </BrowserRouter>
+      </SolProvider>
       </VitalsProvider>
     </DemoProvider>
   );
