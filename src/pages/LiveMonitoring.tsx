@@ -47,7 +47,7 @@ export const LiveMonitoring: React.FC = () => {
                         </div>
 
                         <div className="text-8xl font-serif leading-none tracking-tight mb-2 text-[#2A2118]">
-                            {sensorData.movement} <span className="text-2xl text-[#7A7A52]">hz</span>
+                            {sensorData.motion} <span className="text-2xl text-[#7A7A52]">hz</span>
                         </div>
 
                         <div className="mt-8 flex items-center justify-between pt-4 border-t border-[#E8E0D5]">

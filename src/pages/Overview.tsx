@@ -41,7 +41,7 @@ export const Overview: React.FC = () => {
 
                         <div className="mt-8 flex justify-between border-t border-white/10 pt-4">
                             <span className="text-xs text-[#E8E0D5]/60 uppercase tracking-widest">Connected</span>
-                            <span className="text-xs text-[#E8E0D5]/60 uppercase tracking-widest">Signal Quality: {sensorData.quality}%</span>
+                            <span className="text-xs text-[#E8E0D5]/60 uppercase tracking-widest">SpO2: {sensorData.spo2}%</span>
                         </div>
                     </div>
                 </div>
@@ -51,7 +51,7 @@ export const Overview: React.FC = () => {
                     <div className="grid grid-cols-2 gap-4">
                         <StatCard
                             label="Movement"
-                            value={sensorData.movement}
+                            value={sensorData.motion}
                             unit="hz"
                             subValue="MPU6050"
                             icon={<Activity className="w-5 h-5" />}

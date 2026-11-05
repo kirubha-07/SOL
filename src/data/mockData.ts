@@ -28,10 +28,11 @@ export const mockMLInsights: Record<SensoryState, MLInsight> = {
     },
 };
 
+// DEMO ONLY. Simulated values shown when the app is in Demo mode.
 export const mockSensorData: Record<SensoryState, SensorData> = {
-    Calm: { heartRate: 72, movement: 15, timestamp: new Date().toISOString(), quality: 98 },
-    Elevated: { heartRate: 94, movement: 45, timestamp: new Date().toISOString(), quality: 95 },
-    Escalating: { heartRate: 118, movement: 85, timestamp: new Date().toISOString(), quality: 88 },
+    Calm: { heartRate: 72, spo2: 98, motion: 0.05 },
+    Elevated: { heartRate: 94, spo2: 97, motion: 0.18 },
+    Escalating: { heartRate: 118, spo2: 96, motion: 0.3 },
 };
 
 export const mockEvents: AppEvent[] = [

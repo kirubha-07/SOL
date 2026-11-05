@@ -7,12 +7,14 @@ import { Trends } from './pages/Trends';
 import { Events } from './pages/Events';
 import { Settings } from './pages/Settings';
 import { DemoProvider } from './data/demoContext';
+import { VitalsProvider } from './data/VitalsProvider';
 import { Layout } from './components/Layout';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 function App() {
   return (
     <DemoProvider>
+      <VitalsProvider>
       <BrowserRouter>
         <Layout>
           <Routes>
@@ -28,6 +30,7 @@ function App() {
           </Routes>
         </Layout>
       </BrowserRouter>
+      </VitalsProvider>
     </DemoProvider>
   );
 }
