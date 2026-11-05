@@ -9,9 +9,11 @@ interface StatCardProps {
     icon?: React.ReactNode;
     className?: string;
     dark?: boolean;
+    /** Grey the value out (no fresh data). */
+    muted?: boolean;
 }
 
-export const StatCard: React.FC<StatCardProps> = ({ label, value, subValue, unit, icon, className, dark }) => {
+export const StatCard: React.FC<StatCardProps> = ({ label, value, subValue, unit, icon, className, dark, muted }) => {
     return (
         <div className={clsx(
             "rounded-3xl p-6 flex flex-col gap-4 relative overflow-hidden transition-all duration-300",
@@ -37,7 +39,7 @@ export const StatCard: React.FC<StatCardProps> = ({ label, value, subValue, unit
             </div>
 
             <div className="mt-auto flex items-end gap-1">
-                <span className={clsx("text-5xl font-serif leading-none tracking-tight")}>
+                <span className={clsx("font-serif leading-none tracking-tight", typeof value === 'string' && value.length > 5 ? "text-2xl" : "text-5xl", muted && "opacity-40 grayscale")}>
                     {value}
                 </span>
                 {unit && (
