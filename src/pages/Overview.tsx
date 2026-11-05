@@ -6,7 +6,7 @@ import { useNow, formatAge } from '../data/useNow';
 import { StateHero } from '../components/StateHero';
 import { StatCard } from '../components/StatCard';
 import { WaveformChart } from '../components/WaveformChart';
-import { mockEvents } from '../data/mockData';
+import { useApproval } from '../data/useApproval';
 import { Heart, Activity, CheckCircle2, Droplets } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
@@ -21,7 +21,7 @@ export const Overview: React.FC = () => {
     const spo2 = readingText(vitals, 'spo2');
     const motion = readingText(vitals, 'motion');
     const now = useNow();
-    const events = dataMode === 'demo' ? mockEvents : [];
+    const { events, pending } = useApproval();
 
     return (
         <div className="flex flex-col gap-6 lg:gap-8 max-w-6xl mx-auto">
@@ -124,7 +124,9 @@ export const Overview: React.FC = () => {
                                     </div>
                                     <div>
                                         <h4 className="text-xl font-serif text-[--color-escalating] font-bold mb-2">Support suggestion</h4>
-                                        <p className="text-sm text-[#7A7A52] leading-relaxed">A suggested action needs a caregiver's approval. Nothing happens until it is approved.</p>
+                                        <p className="text-sm text-[#7A7A52] leading-relaxed">
+                                            {pending ? 'A suggested action is waiting for your approval at the top of the page. Nothing happens until you approve it.' : 'No suggestion is waiting (it was answered or expired).'}
+                                        </p>
                                     </div>
                                 </div>
                                 <Link to="/environment" className="mt-4 flex items-center justify-center gap-2 py-3 bg-[--color-surface-dark] text-white hover:bg-black rounded-xl text-sm font-semibold transition-colors shadow-lg">
@@ -145,9 +147,9 @@ export const Overview: React.FC = () => {
                                 <div key={event.id} className="flex justify-between items-center pb-4 border-b border-[#E8E0D5]/60 last:border-0 last:pb-0">
                                     <div className="flex flex-col">
                                         <span className="text-sm font-semibold text-[#2A2118]">{event.state}</span>
-                                        <span className="text-xs text-[#7A7A52]">{event.action}</span>
+                                        <span className="text-xs text-[#7A7A52]">{event.decision ? event.decision === 'not-now' ? 'Not now' : event.decision === 'approved' ? 'Approved' : 'Expired, no action' : event.actionId ? 'Waiting for caregiver' : 'Quiet note'}</span>
                                     </div>
-                                    <span className="text-xs font-mono text-[#7A7A52]">{event.time}</span>
+                                    <span className="text-xs font-mono text-[#7A7A52]">{new Date(event.t).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
                                 </div>
                             ))}
                         </div>

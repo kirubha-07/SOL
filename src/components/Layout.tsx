@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavDock } from './NavDock';
 import { DemoSwitcher } from './DemoSwitcher';
+import { ApprovalCard } from './ApprovalCard';
 
 export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     return (
@@ -9,6 +10,8 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                 <div className="font-serif font-bold text-2xl text-[--color-surface-dark] tracking-wide">SOL</div>
                 <DemoSwitcher />
             </header>
+
+            <ApprovalCard />
 
             <main className="flex-1 w-full px-4 lg:px-12 pb-36 lg:pb-32 overflow-x-hidden pt-4 lg:pt-8 transition-all">
                 {children}
