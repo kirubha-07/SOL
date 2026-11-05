@@ -1,0 +1,13 @@
+{
+  "name": "sol-light-bridge",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Optional local bridge that lets the SOL web app dim a Tapo bulb on the same Wi-Fi. UNTESTED.",
+  "scripts": {
+    "start": "node server.mjs"
+  },
+  "dependencies": {
+    "tapo": "^0.8.0"
+  }
+}
