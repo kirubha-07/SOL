@@ -17,7 +17,7 @@ export const Environment: React.FC = () => {
     const state = display.state;
     const lightSimulated = mode === 'demo' || !bridgeUrl.trim();
 
-    const toneBox = state === 'Calm' ? 'border-[--color-calm] bg-[--color-calm]/5' : state === 'Elevated' ? 'border-[--color-elevated] bg-[--color-elevated]/5' : state === 'Escalating' ? 'border-[--color-escalating] bg-[--color-escalating]/5' : 'border-[#E8E0D5]';
+    const toneBox = state === 'Calm' ? 'border-(--color-calm) bg-(--color-calm)/5' : state === 'Elevated' ? 'border-(--color-elevated) bg-(--color-elevated)/5' : state === 'Escalating' ? 'border-(--color-escalating) bg-(--color-escalating)/5' : 'border-[#E8E0D5]';
     const suggestion = state === 'Escalating' ? actions[pending?.actionId ?? nextAction].label : state === null ? '—' : state === 'Elevated' ? 'Quiet note only' : 'No action';
 
     return (
@@ -41,7 +41,7 @@ export const Environment: React.FC = () => {
                         <span className="text-sm font-medium text-[#2A2118]">{suggestion}</span>
                     </div>
                     <ArrowRight className="w-6 h-6 text-[#E8E0D5] rotate-90 md:rotate-0" />
-                    <div className={clsx("flex flex-col items-center justify-center text-center p-6 rounded-xl border-2 w-full md:w-1/4 transition-colors", pending ? 'border-[--color-terracotta] bg-[--color-terracotta]/5' : 'border-[#E8E0D5]')}>
+                    <div className={clsx("flex flex-col items-center justify-center text-center p-6 rounded-xl border-2 w-full md:w-1/4 transition-colors", pending ? 'border-(--color-terracotta) bg-(--color-terracotta)/5' : 'border-[#E8E0D5]')}>
                         <span className="text-xs font-bold uppercase tracking-widest text-[#7A7A52] mb-3">3. Approve</span>
                         <span className="text-sm font-medium text-[#2A2118]">{pending ? 'Waiting for caregiver' : 'Nothing pending'}</span>
                     </div>
@@ -117,7 +117,7 @@ export const Environment: React.FC = () => {
 };
 
 const ControlCard: React.FC<{ icon: React.ReactNode; title: string; sub: string; status: string; active: boolean; onStop?: () => void; stopLabel?: string }> = ({ icon, title, sub, status, active, onStop, stopLabel }) => (
-    <div className={clsx("border rounded-3xl p-6 transition-all duration-300", active ? 'bg-[--color-terracotta]/10 outline outline-2 outline-[--color-terracotta]/20 border-transparent' : 'bg-white border-[#E8E0D5]')}>
+    <div className={clsx("border rounded-3xl p-6 transition-all duration-300", active ? 'bg-(--color-terracotta)/10 outline outline-2 outline-(--color-terracotta)/20 border-transparent' : 'bg-white border-[#E8E0D5]')}>
         <div className="flex justify-between items-start mb-6">
             <div className="p-3 bg-black/5 rounded-full text-[#2A2118]">{icon}</div>
         </div>

@@ -5,9 +5,9 @@ import { ApprovalCard } from './ApprovalCard';
 
 export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     return (
-        <div className="min-h-screen flex flex-col bg-[--color-off-white] relative pt-6 lg:pt-10">
+        <div className="min-h-screen flex flex-col bg-(--color-off-white) relative pt-6 lg:pt-10">
             <header className="px-6 lg:px-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 z-30 pb-4">
-                <div className="font-serif font-bold text-2xl text-[--color-surface-dark] tracking-wide">SOL</div>
+                <div className="font-serif font-bold text-2xl text-(--color-surface-dark) tracking-wide">SOL</div>
                 <DemoSwitcher />
             </header>
 

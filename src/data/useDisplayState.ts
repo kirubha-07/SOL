@@ -57,8 +57,8 @@ export function useDisplayState(): DisplayState {
 }
 
 export const toneClass: Record<Tone, string> = {
-    calm: 'text-[--color-calm]',
-    elevated: 'text-[--color-elevated]',
-    escalating: 'text-[--color-escalating]',
+    calm: 'text-(--color-calm)',
+    elevated: 'text-(--color-elevated)',
+    escalating: 'text-(--color-escalating)',
     muted: 'text-[#7A7A52]',
 };

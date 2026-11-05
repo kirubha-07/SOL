@@ -37,7 +37,7 @@ export const LiveMonitoring: React.FC = () => {
                             <span className="text-xs uppercase tracking-widest text-[#E8E0D5] font-semibold">Heart Rate</span>
                             <span className="text-sm text-[#E8E0D5]/70">MAX30102{demo ? ' • simulated' : ''}</span>
                         </div>
-                        <Heart className="w-6 h-6 text-[--color-terracotta]" />
+                        <Heart className="w-6 h-6 text-(--color-terracotta)" />
                     </div>
 
                     <div className={clsx("font-serif leading-none tracking-tight mb-8", hr.words ? "text-4xl" : "text-8xl", muted && "opacity-40")}>

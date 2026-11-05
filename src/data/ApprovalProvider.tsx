@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useDemoMode } from './demoContext';
+import { mockSensorData } from './mockData';
 import { useVitals } from './useVitals';
 import { useSolState } from './useSolState';
 import { useDisplayState } from './useDisplayState';
@@ -42,10 +43,10 @@ export const ApprovalProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     const modeRef = useRef(mode);
     const cur = useRef<{ state: SensoryState | null; since: number }>({ state: null, since: 0 });
     const prev = useRef<{ mode: Mode; state: SensoryState | null }>({ mode, state: null });
-    const latest = useRef({ vitals, sol });
+    const latest = useRef({ sol });
     useEffect(() => {
         modeRef.current = mode;
-        latest.current = { vitals, sol };
+        latest.current = { sol };
     });
 
     const actions = useMemo(
@@ -66,16 +67,16 @@ export const ApprovalProvider: React.FC<{ children: React.ReactNode }> = ({ chil
             updateMode(mode, (evts) => resolveRecoveries(expirePending(evts, now, 'Calm'), now, cur.current));
             return;
         }
-        const { vitals: v, sol: s } = latest.current;
+        const { sol: s } = latest.current;
         const w = s.lastWindow;
         const demo = mode === 'demo';
         const trigger = {
-            hr: demo ? v.hr : w?.meanHr ?? null,
+            hr: demo ? mockSensorData[reported].heartRate : w?.meanHr ?? null,
             baselineMean: s.baseline?.meanHr ?? null,
             baselineSd: s.baseline?.sdHr ?? null,
             elevatedAt: s.thresholds?.elevatedAt ?? null,
             escalatingAt: s.thresholds?.escalatingAt ?? null,
-            motion: demo ? v.motion : w?.meanMotion ?? null,
+            motion: demo ? mockSensorData[reported].motion : w?.meanMotion ?? null,
             motionThreshold: s.config.motionThreshold,
         };
         updateMode(mode, (evts) => {

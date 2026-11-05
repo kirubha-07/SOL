@@ -26,7 +26,7 @@ export const StateHero: React.FC = () => {
                 {display.hint && (
                     <p className="text-sm text-[#7A7A52] mb-6 max-w-sm">
                         {display.hint}
-                        {display.label === 'Baseline needed' && <> <Link to="/settings" className="text-[--color-terracotta] font-semibold underline">Open Settings</Link></>}
+                        {display.label === 'Baseline needed' && <> <Link to="/settings" className="text-(--color-terracotta) font-semibold underline">Open Settings</Link></>}
                     </p>
                 )}
 

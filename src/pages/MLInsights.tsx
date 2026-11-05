@@ -54,9 +54,9 @@ export const MLInsights: React.FC = () => {
                     {baseline && thresholds ? (
                         <>
                             <div className="relative h-4 rounded-full overflow-hidden flex">
-                                <div className="bg-[--color-calm]/40" style={{ width: `${pos(thresholds.elevatedAt)}%` }} />
-                                <div className="bg-[--color-elevated]/50" style={{ width: `${pos(thresholds.escalatingAt) - pos(thresholds.elevatedAt)}%` }} />
-                                <div className="bg-[--color-escalating]/50 flex-1" />
+                                <div className="bg-(--color-calm)/40" style={{ width: `${pos(thresholds.elevatedAt)}%` }} />
+                                <div className="bg-(--color-elevated)/50" style={{ width: `${pos(thresholds.escalatingAt) - pos(thresholds.elevatedAt)}%` }} />
+                                <div className="bg-(--color-escalating)/50 flex-1" />
                                 {lastWindow?.meanHr != null && (
                                     <div className={clsx("absolute top-0 bottom-0 w-1 bg-[#1C1815]", muted && "opacity-30")} style={{ left: `${pos(lastWindow.meanHr)}%` }} />
                                 )}
@@ -71,7 +71,7 @@ export const MLInsights: React.FC = () => {
                         </>
                     ) : (
                         <p className="text-sm text-[#7A7A52]">
-                            No resting baseline yet. <Link to="/settings" className="text-[--color-terracotta] font-semibold underline">Record one in Settings.</Link>
+                            No resting baseline yet. <Link to="/settings" className="text-(--color-terracotta) font-semibold underline">Record one in Settings.</Link>
                         </p>
                     )}
                 </div>
@@ -95,7 +95,7 @@ export const MLInsights: React.FC = () => {
                 </div>
             </div>
 
-            <div className="bg-[--color-surface-dark]/5 border border-[#E8E0D5] p-6 rounded-2xl flex gap-4 text-[#7A7A52] text-sm items-start">
+            <div className="bg-(--color-surface-dark)/5 border border-[#E8E0D5] p-6 rounded-2xl flex gap-4 text-[#7A7A52] text-sm items-start">
                 <Info className="w-5 h-5 flex-shrink-0 mt-0.5" />
                 <p className="leading-relaxed">
                     These are simple threshold rules on heart rate and movement, compared with this child's own resting baseline. They are a monitoring and support aid, not a medical device, and not a trained model.

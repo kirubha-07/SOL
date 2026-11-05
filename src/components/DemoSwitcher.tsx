@@ -11,14 +11,14 @@ export const DemoSwitcher: React.FC = () => {
     return (
         <div className="flex flex-wrap items-center gap-3">
             {dataMode === 'demo' ? (
-                <span className="px-3 py-1 rounded-full bg-[--color-elevated] text-[#1C1815] text-xs font-bold uppercase tracking-widest">
+                <span className="px-3 py-1 rounded-full bg-(--color-elevated) text-[#1C1815] text-xs font-bold uppercase tracking-widest">
                     Demo · simulated data
                 </span>
             ) : (
                 <span
                     className={clsx(
                         'px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest border',
-                        status === 'live' ? 'border-[--color-calm]/30 bg-[--color-calm]/10 text-[--color-calm]' : 'border-[#E8E0D5] bg-black/5 text-[#7A7A52]'
+                        status === 'live' ? 'border-(--color-calm)/30 bg-(--color-calm)/10 text-(--color-calm)' : 'border-[#E8E0D5] bg-black/5 text-[#7A7A52]'
                     )}
                 >
                     {status === 'live' ? 'Live' : 'Disconnected'}

@@ -96,7 +96,7 @@ export const Overview: React.FC = () => {
                         )}
                         {currentState === 'Calm' && (
                             <div className="flex items-start gap-4">
-                                <div className="p-3 bg-[--color-calm]/10 rounded-full text-[--color-calm]">
+                                <div className="p-3 bg-(--color-calm)/10 rounded-full text-(--color-calm)">
                                     <CheckCircle2 className="w-6 h-6" />
                                 </div>
                                 <div>
@@ -107,7 +107,7 @@ export const Overview: React.FC = () => {
                         )}
                         {currentState === 'Elevated' && (
                             <div className="flex items-start gap-4">
-                                <div className="p-3 bg-[--color-elevated]/10 outline outline-1 outline-[--color-elevated]/20 rounded-full text-[--color-elevated]">
+                                <div className="p-3 bg-(--color-elevated)/10 outline outline-1 outline-(--color-elevated)/20 rounded-full text-(--color-elevated)">
                                     <Activity className="w-6 h-6" />
                                 </div>
                                 <div>
@@ -119,17 +119,17 @@ export const Overview: React.FC = () => {
                         {currentState === 'Escalating' && (
                             <div className="flex flex-col gap-4">
                                 <div className="flex items-start gap-4">
-                                    <div className="p-3 bg-[--color-escalating]/10 outline outline-1 outline-[--color-escalating]/20 rounded-full text-[--color-escalating]">
+                                    <div className="p-3 bg-(--color-escalating)/10 outline outline-1 outline-(--color-escalating)/20 rounded-full text-(--color-escalating)">
                                         <Heart className="w-6 h-6" />
                                     </div>
                                     <div>
-                                        <h4 className="text-xl font-serif text-[--color-escalating] font-bold mb-2">Support suggestion</h4>
+                                        <h4 className="text-xl font-serif text-(--color-escalating) font-bold mb-2">Support suggestion</h4>
                                         <p className="text-sm text-[#7A7A52] leading-relaxed">
                                             {pending ? 'A suggested action is waiting for your approval at the top of the page. Nothing happens until you approve it.' : 'No suggestion is waiting (it was answered or expired).'}
                                         </p>
                                     </div>
                                 </div>
-                                <Link to="/environment" className="mt-4 flex items-center justify-center gap-2 py-3 bg-[--color-surface-dark] text-white hover:bg-black rounded-xl text-sm font-semibold transition-colors shadow-lg">
+                                <Link to="/environment" className="mt-4 flex items-center justify-center gap-2 py-3 bg-(--color-surface-dark) text-white hover:bg-black rounded-xl text-sm font-semibold transition-colors shadow-lg">
                                     Open Environment
                                 </Link>
                             </div>
@@ -139,7 +139,7 @@ export const Overview: React.FC = () => {
                     <div className="bg-white border border-[#E8E0D5] rounded-3xl p-6 shadow-sm">
                         <div className="flex justify-between items-center mb-6">
                             <h3 className="text-xs uppercase tracking-widest text-[#7A7A52] font-semibold">Recent Events</h3>
-                            <Link to="/events" className="text-xs text-[--color-terracotta] font-semibold hover:underline">View All</Link>
+                            <Link to="/events" className="text-xs text-(--color-terracotta) font-semibold hover:underline">View All</Link>
                         </div>
                         <div className="flex flex-col gap-4">
                             {events.length === 0 && <span className="text-sm text-[#7A7A52]">No events recorded yet.</span>}

@@ -48,7 +48,7 @@ export const Wearable: React.FC = () => {
 
                     <span className={clsx(
                         "px-3 py-1 font-semibold text-xs tracking-wider uppercase rounded-full border",
-                        live ? "bg-[--color-calm]/10 text-[--color-calm] border-[--color-calm]/20" : demo ? "bg-[--color-elevated]/15 text-[#7A5A10] border-[--color-elevated]/30" : "bg-black/5 text-[#7A7A52] border-[#E8E0D5]"
+                        live ? "bg-(--color-calm)/10 text-(--color-calm) border-(--color-calm)/20" : demo ? "bg-(--color-elevated)/15 text-[#7A5A10] border-(--color-elevated)/30" : "bg-black/5 text-[#7A7A52] border-[#E8E0D5]"
                     )}>
                         {statusLabel(vitals)}
                     </span>
@@ -57,7 +57,7 @@ export const Wearable: React.FC = () => {
                             ? `Last update: ${new Date(vitals.lastUpdated).toLocaleTimeString()} (${formatAge(now - vitals.lastUpdated)})`
                             : vitals.loading ? 'Connecting…' : 'No data received yet'}
                     </p>
-                    {vitals.error && !demo && <p className="text-xs text-[--color-escalating] mt-2">Service error: {vitals.error}</p>}
+                    {vitals.error && !demo && <p className="text-xs text-(--color-escalating) mt-2">Service error: {vitals.error}</p>}
 
                     {!demo && (
                         <div className="mt-6 flex flex-col gap-2 w-full">

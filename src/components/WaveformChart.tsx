@@ -20,7 +20,7 @@ export const WaveformChart: React.FC<{ dark?: boolean; height?: number }> = ({ d
                 <h3 className={clsx("text-xs font-semibold uppercase tracking-widest", dark ? "text-[#E8E0D5]" : "text-[#7A7A52]")}>
                     Heart rate · last 5 min{dataMode === 'demo' ? ' · simulated' : ''}
                 </h3>
-                <HeartPulse className={clsx("w-5 h-5", muted ? "text-[#7A7A52]" : "text-[--color-terracotta]")} />
+                <HeartPulse className={clsx("w-5 h-5", muted ? "text-[#7A7A52]" : "text-(--color-terracotta)")} />
             </div>
 
             <div className="relative flex-1 mt-auto z-0" style={{ minHeight: height, height }}>

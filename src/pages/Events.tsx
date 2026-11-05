@@ -100,7 +100,7 @@ export const Events: React.FC = () => {
                                     <td className="p-6">
                                         <span className={clsx(
                                             "px-3 py-1 text-xs uppercase tracking-wider font-bold rounded-full",
-                                            event.state === 'Elevated' ? 'bg-[--color-elevated]/10 text-[--color-elevated] border border-[--color-elevated]/20' : 'bg-[--color-escalating]/10 text-[--color-escalating] border border-[--color-escalating]/20'
+                                            event.state === 'Elevated' ? 'bg-(--color-elevated)/10 text-(--color-elevated) border border-(--color-elevated)/20' : 'bg-(--color-escalating)/10 text-(--color-escalating) border border-(--color-escalating)/20'
                                         )}>
                                             {event.state}
                                         </span>
@@ -109,7 +109,7 @@ export const Events: React.FC = () => {
                                     <td className="p-6 text-sm text-[#2A2118] font-medium">{event.actionId ? actionLabel[event.actionId] : 'None (quiet note)'}</td>
                                     <td className="p-6 text-sm text-[#2A2118] font-medium">
                                         {decisionText(event)}
-                                        {event.execError && <div className="text-xs text-[--color-escalating] mt-1">{event.execError}</div>}
+                                        {event.execError && <div className="text-xs text-(--color-escalating) mt-1">{event.execError}</div>}
                                     </td>
                                     <td className="p-6 text-sm text-[#7A7A52] font-medium">{recoveryText(event)}</td>
                                 </tr>
